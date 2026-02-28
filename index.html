@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qr Code Generator</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!--google fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Neuton:ital,wght@0,200;0,300;0,400;0,700;0,800;1,400&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+    <header>
+    <h1>⚡🔳 Smart QR Code Generator System ⚡</h1>
+</header>
+
+    <div class="main">
+        <div class="card">
+            <h2> 🔹 QR Code Type</h2>
+
+            <select id="type" onchange="switchType()">
+                <option value="text">Text / URL</option>
+                <option value="phone">Phone</option>
+                <option value="email">Email</option>
+            </select>
+
+            <div id="inputArea">
+                <input id="value" placeholder="Enter value">
+            </div>
+
+            <div class="row">
+                <div>
+                    <label>QR Color</label>
+                    <input type="color" id="qrColor" value="#00e5ff">
+                </div>
+                <div>
+                    <label class="bgcolor">BG Color</label>
+                    <input type="color" id="bgColor" value="#000000">
+                </div>
+            </div>
+
+            <label>Size</label>
+            <input type="range" min="180" max="360" value="260" id="size">
+
+            <button onclick="createQR()">Generate</button>
+            <button class="outline" onclick="download()">Download</button>
+        </div>
+
+        <div class="card">
+            <h3>QR Code Preview</h3>
+            <div id="qrBox"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.js"></script>
+</body>
+
+</html>
